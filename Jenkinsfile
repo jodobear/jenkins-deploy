@@ -14,7 +14,7 @@ pipeline {
       stage('Deliver') {
          steps {
             sshagent(['vagrant-toolbox-key']) {
-                sh 'scp go-artifact vagrant@10.10.50.3:~'
+                sh 'scp -o StrictHostKeyChecking=no go-artifact vagrant@10.10.50.3:~'
             }
          }
       }
